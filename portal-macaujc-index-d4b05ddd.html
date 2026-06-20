@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>澳门六合彩 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 0 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 0 3rem;
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            background: linear-gradient(145deg, #0f2b38 0%, #1a4b5c 100%);
+            border-radius: 2.5rem;
+            padding: 3rem 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -12px rgba(15, 43, 56, 0.25);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(72, 187, 160, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            max-width: 80%;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.25rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #b2e3d4;
+        }
+
+        /* ---------- 卡片网格 ---------- */
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #0f2b38;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .section-title span {
+            display: inline-block;
+            width: 6px;
+            height: 28px;
+            background: #2a9d8f;
+            border-radius: 12px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.75rem;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.25s ease;
+            border: 1px solid #eef2f6;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(0, 60, 60, 0.12);
+            border-color: #cfe3de;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1a4b5c;
+        }
+
+        .card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background: #e0f2ee;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        /* ---------- 说明区 ---------- */
+        .intro-block {
+            background: #ffffff;
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e4edeb;
+        }
+
+        .intro-block h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #0f2b38;
+        }
+
+        .intro-block p {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-highlight {
+            background: #f1f9f7;
+            padding: 1.2rem 1.6rem;
+            border-radius: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            border-left: 5px solid #2a9d8f;
+        }
+
+        /* ---------- FAQ 摘要 ---------- */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 2rem;
+            padding: 2rem 2rem 1.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e4edeb;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #0f2b38;
+        }
+
+        .faq-item {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #ecf1f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1a4b5c;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-a {
+            color: #4b5c6b;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- 底部 ---------- */
+        .footer-links {
+            text-align: center;
+            padding: 2rem 0 0.5rem;
+            border-top: 1px solid #dce5e1;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #2a9d8f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .footer-links a:hover {
+            color: #16796d;
+            text-decoration: underline;
+        }
+
+        .footer-meta {
+            color: #8096a6;
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 2.2rem 1.5rem;
+                border-radius: 2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+                max-width: 100%;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .intro-block {
+                padding: 1.8rem 1.2rem;
+            }
+            .faq-summary {
+                padding: 1.5rem 1.2rem;
+            }
+            .container {
+                padding: 1rem 0 2rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.4rem;
+                max-width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-tag">介绍 · 可信站点</div>
+        <h1>澳门六合彩<br>信息与说明</h1>
+        <p>一份关于 portal-macaujc.com 的简明介绍：我们梳理资讯、提供参考，帮助用户建立对平台的理性认识。</p>
+    </section>
+
+    <!-- 优势区：卡片网格 -->
+    <div class="section-title"><span></span> 站点特点</div>
+    <div class="grid-cards">
+        <div class="card">
+            <div class="card-icon">📋</div>
+            <h3>结构清晰</h3>
+            <p>页面布局经过梳理，资讯分类明确，便于快速定位所需内容，减少浏览负担。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔒</div>
+            <h3>访问说明</h3>
+            <p>我们注重访问环境的稳定性，不收集多余信息，仅做必要的数据传输保障。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🕒</div>
+            <h3>持续更新</h3>
+            <p>内容与相关资讯会保持一定频率的更新，反映客观状况，不夸大不滞后。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3>移动适配</h3>
+            <p>针对手机与平板优化了交互与字体，随时随地都能顺畅阅读。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：从站点介绍与可信说明的角度 -->
+    <div class="intro-block">
+        <h2>关于站点的说明</h2>
+        <p>portal-macaujc.com 是一个提供澳门六合彩相关资讯的线上信息节点。站点本身并不从事任何形式的博彩运营，而是以信息整合与内容展示为方向，为用户提供参考和了解渠道。</p>
+        <div class="intro-highlight">
+            <strong>可信说明</strong> — 我们坚持内容来源可追溯，不虚构数据，不承诺收益，不鼓励非理性参与。任何对平台的访问都应建立在个人独立判断的基础上。
+        </div>
+        <p>如果你希望进一步了解该平台所呈现的内容，可以直接访问 <a href="https://portal-macaujc.com" style="color:#2a9d8f; font-weight:500; text-decoration:underline;">澳门六合彩</a>，页面内包含更详细的分类和指引。所有信息仅供参考，不构成任何形式的建议或保证。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h2>常见问题 · 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">这个站点是官方平台吗？</div>
+            <div class="faq-a">portal-macaujc.com 是一个内容展示站点，并非任何政府或机构的官方渠道。它所呈现的信息仅供用户个人参考。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">信息是否可靠？</div>
+            <div class="faq-a">我们尽力确保信息的准确与时效，但不对所有内容的完整性或绝对正确性做出担保。建议用户通过多个渠道进行交叉了解。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">访问时需要注意什么？</div>
+            <div class="faq-a">请基于自身意愿与当地法律法规决定是否访问。我们不追踪用户行为，但建议使用常规网络安全措施。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">如何快速了解平台内容？</div>
+            <div class="faq-a">你可以从首页导航或分类入口开始浏览，核心页面均设有概要说明。如果还有疑问，可通过站点内预留的方式进一步沟通。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p>了解更多信息，请访问 <a href="https://portal-macaujc.com">澳门六合彩</a> · 理性判断，自主参考</p>
+        <div class="footer-meta">portal-macaujc.com · 内容介绍页</div>
+    </div>
+
+</div>
+
+</body>
+</html>
